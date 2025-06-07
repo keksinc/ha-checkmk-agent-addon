@@ -8,7 +8,7 @@ curl -sSL -H "Authorization: Bearer $SUPERVISOR_TOKEN" http://supervisor/core/in
 curl -sSL -H "Authorization: Bearer $SUPERVISOR_TOKEN" http://supervisor/os/info
 echo ""
 echo token: $SUPERVISOR_TOKEN
-
+ping supervisor -c3
 echo "Starting socat"
 /usr/bin/socat -U TCP-LISTEN:6556,fork,reuseaddr EXEC:/bin/check_mk_agent
 
