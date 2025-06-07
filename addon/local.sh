@@ -20,7 +20,7 @@ hostDiskTotal=$(echo "$jsonHost" | jq -r ".data.disk_total")
 
 usagePercent=$(printf "%.2f" $(echo "100*$hostDiskUsed/$hostDiskTotal" | bc -l))
 
-echo P \"Disk Usage\" usage="$usagePercent;70;90;0;100" Current usage: $usagePercent
+echo P \"Disk Usage\" usage="${usagePercent}%;70;90;0;100" Current usage: $usagePercent
 
 
 # echo 0 \"My service\" myvalue=73 My output text which may contain spaces
