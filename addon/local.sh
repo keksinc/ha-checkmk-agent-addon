@@ -2,6 +2,7 @@
 
 jsonCore=$(curl -sSL -H "Authorization: Bearer $SUPERVISOR_TOKEN" http://supervisor/core/info)
 jsonOs=$(curl -sSL -H "Authorization: Bearer $SUPERVISOR_TOKEN" http://supervisor/os/info)
+jsonHost=$(curl -sSL -H "Authorization: Bearer $SUPERVISOR_TOKEN" http://supervisor/host/info)
 
 
 coreVersion=$(echo "$jsonCore" | jq -r ".data.version")
