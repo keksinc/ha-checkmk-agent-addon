@@ -7,6 +7,7 @@
 curl -sSL -H "Authorization: Bearer $SUPERVISOR_TOKEN" http://supervisor/core/info
 curl -sSL -H "Authorization: Bearer $SUPERVISOR_TOKEN" http://supervisor/os/info
 echo ""
+
 echo token: $SUPERVISOR_TOKEN
 ping supervisor -c3
 echo "Starting socat"
