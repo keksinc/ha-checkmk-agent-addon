@@ -1,0 +1,1 @@
+# ha-checkmk-agent-addon
