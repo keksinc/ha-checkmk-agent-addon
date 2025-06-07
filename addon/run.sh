@@ -2,8 +2,8 @@
 
 /bin/check_mk_agent
 
-ha core info --raw-json | jq -r ".data.version"
-ha core info --raw-json | jq -r ".data.version_latest"
+/usr/bin/ha core info --raw-json | jq -r ".data.version"
+/usr/bin/ha core info --raw-json | jq -r ".data.version_latest"
 
 
 
