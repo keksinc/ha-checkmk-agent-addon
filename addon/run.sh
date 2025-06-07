@@ -2,9 +2,10 @@
 
 /bin/check_mk_agent
 
-/usr/bin/ha core info --raw-json | jq -r ".data.version"
-/usr/bin/ha core info --raw-json | jq -r ".data.version_latest"
-
+#/usr/bin/ha core info --raw-json | jq -r ".data.version"
+#/usr/bin/ha core info --raw-json | jq -r ".data.version_latest"
+curl -sSL -H "Authorization: Bearer $SUPERVISOR_TOKEN" http://supervisor/core/info
+curl -sSL -H "Authorization: Bearer $SUPERVISOR_TOKEN" http://supervisor/os/info
 
 
 echo "Starting socat"
