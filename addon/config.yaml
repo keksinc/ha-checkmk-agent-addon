@@ -1,12 +1,11 @@
 name: "Check mk agent"
 description: "Check mk agent"
-version: "1.4.19"
+version: "1.4.20"
 slug: "ha_checkmk_agent"
 init: false
 startup: services
 homeassistant_api: true
 hassio_api: true
-full_access: true
 ports:
   6556/tcp: 6556
 arch:
