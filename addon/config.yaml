@@ -6,7 +6,8 @@ init: false
 startup: services
 homeassistant_api: true
 host_network: true
-privileged: true
+privileged: 
+  - api
 full_access: true
 ports:
   6556/tcp: 6556
