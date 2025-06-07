@@ -1,13 +1,16 @@
 
 
+jsonCore=$(curl -sSL -H "Authorization: Bearer $SUPERVISOR_TOKEN" http://supervisor/core/info)
+jsonOs=$(curl -sSL -H "Authorization: Bearer $SUPERVISOR_TOKEN" http://supervisor/os/info)
 
-coreVersion=$(/usr/bin/ha core info --raw-json | jq -r ".data.version")
-coreLatestVersion=$(/usr/bin/ha core info --raw-json | jq -r ".data.version_latest")
+
+coreVersion=$(jq -r ".data.version" "$jsonCore")
+coreLatestVersion=$(jq -r ".data.version_latest" "$jsonCore")
 [ "$coreVersion" = "$coreLatestVersion" ] && status=0 || status=1
 echo $status \"HA Core version\" - $coreVersion - Latest: $coreLatestVersion
 
-osVersion=$(/usr/bin/ha os info --raw-json | jq -r ".data.version")
-osLatestVersion=$(/usr/bin/ha os info --raw-json | jq -r ".data.version_latest")
+osVersion=$(jq -r ".data.version" "$jsonOs")
+osLatestVersion=$(jq -r ".data.version_latest" "$jsonOs")
 [ "$osVersion" = "$osLatestVersion" ] && status=0 || status=1
 echo $status \"HA OS version\" - $osVersion - Latest: $osLatestVersion
 
