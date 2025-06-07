@@ -1,6 +1,6 @@
 name: "Check mk agent"
 description: "Check mk agent"
-version: "1.4.2"
+version: "1.4.3"
 slug: "ha_checkmk_agent"
 init: false
 startup: services

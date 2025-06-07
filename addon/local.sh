@@ -1,3 +1,6 @@
+
+
+
 coreVersion=$(ha core info --raw-json | jq -r ".data.version")
 coreLatestVersion=$(ha core info --raw-json | jq -r ".data.version_latest")
 [ "$coreVersion" = "$coreLatestVersion" ] && status=0 || status=1
