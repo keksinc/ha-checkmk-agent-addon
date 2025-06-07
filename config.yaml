@@ -1,0 +1,14 @@
+name: "Check mk agent"
+description: "Check mk agent"
+version: "1.4.0"
+slug: "ha_checkmk_agent"
+init: false
+startup: services
+ports:
+  6556/tcp: 6556
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
